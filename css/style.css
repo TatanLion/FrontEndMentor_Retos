@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+html {
+    box-sizing: border-box;
+    height:100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    background-color: hsl(233, 47%, 7%);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+h1, p, h3 {
+    margin: 0;
+}
+
+.contenedor{
+    background-color: hsl(244, 38%, 16%);
+    max-width: 375px;
+    border-radius: 10px;  
+}
+
+.img{
+    background-image:url(/images/image-header-mobile.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    max-width: 100%;
+    position:relative;
+    z-index:1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.img::after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: hsla(277, 64%, 50%, 0.6);
+    z-index:-1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.contenido{
+    text-align: center;
+    padding: 20px;
+}
+
+.contenido span{
+    color: hsl(277, 64%, 61%);
+}
+
+.parrafo{
+    margin-top: 25px;
+    line-height: 2;
+    font-weight: 400;
+}
+
+.sub-contenido{
+    margin: 25px 0;
+}
+
+.sub-contenido h3{
+    margin-bottom: 8px;
+}
+
+.sub-contenido p{
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 28px;
+}
+
+@media (min-width: 768px){
+    .tarjeta{
+        display: grid;
+        grid-template-columns: 450px 450px;
+    }
+    .contenedor{
+        max-width: 890px;
+        max-height: 400px;
+    }
+    .contenido{
+        font-size: 14px;
+        padding: 20px;
+        order: -1;
+    }
+    .img{
+       height: 350px;
+       border-bottom-right-radius: 10px;
+       border-top-left-radius: 0;
+    }
+    .img::after{
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 0;
+    }
+    .parrafo{
+        margin-top: 45px;
+        line-height: 1.5;
+    }
+    .sub-contenido{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 40px 0 10px 0;
+    }
+    .one{
+        grid-row: 1/2;
+    }
+    .three{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    .five{
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+}
